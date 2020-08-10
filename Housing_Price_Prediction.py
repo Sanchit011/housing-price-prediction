@@ -151,9 +151,22 @@ price = np.dot([1, size, br], theta)
 print('Predicted price of a 1650 sq-ft, 3 br house (using gradient descent): ${:.0f}'.format(price))
 print("------------------------------------------------------------------ \n")
 
+prediction = np.dot(X, theta)
+
+deviation = abs((prediction - y)/y)
+avg_dev = np.sum(deviation)/47
+print("Average deviation is")
+print(avg_dev)
+
+
 # Plot the convergence graph
 plt.plot(np.arange(len(J_history)), J_history, lw=2)
 plt.xlabel('Number of iterations')
 plt.ylabel('Cost J')
 plt.show()
+
+
+
+
+
 
